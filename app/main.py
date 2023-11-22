@@ -1,9 +1,8 @@
 from typing import Union
 from fastapi import FastAPI
-from app.model import core
-from app.model.database import engine
-from app.routers.router import router as comic_router
-
+from .model import core
+from .model.database import engine
+from .routers.router import router as comic_router
 
 core.Base.metadata.create_all(bind=engine)
 
@@ -11,7 +10,6 @@ app = FastAPI()
 app.include_router(
     router=comic_router
 )
-
 
 
 @app.get("/")
