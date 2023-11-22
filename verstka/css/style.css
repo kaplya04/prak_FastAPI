@@ -1,0 +1,220 @@
+body{
+    width: 1855px;
+    height: 1800px;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+.header{
+    width: 1855px;
+    height: 90px;
+    
+}
+.header img{
+    width: 1855px;
+    height: 90px;
+    float: left;
+}
+.nav{
+    width: 1855px;
+    height: 72px;
+}
+.nav ul{
+    height: 20px;
+    float: left;
+    margin-top: -58px;
+    display: inline-flex;
+    color: white;
+    align-content: stretch;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.nav li{
+    width: 135px;
+    margin-left: 180px;
+    list-style-type: none;
+}
+.nav a{
+    color: white;
+    font-size: 26px;
+    text-decoration: none;
+}
+.marvel{
+    width: 1855px;
+    height: 152px;
+    top: 87px;
+}
+.name_proj h1{
+    width: 806px;
+    height: 48px;
+    top: 119px;
+    font-size: 36px;
+    font-family: 'Montserrat';
+    line-height: 64px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+.name_proj h2{
+    width: 806px;
+    height: 48px;
+    top: 119px;
+    font-family: 'Nosifer Caps';
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 64px;
+    letter-spacing: 0em;
+    text-align: center;   
+}
+.adres img{
+    width: 45px;
+    height: 61px;
+    float: left;
+    margin-top: -130px;
+    margin-left: 993px;
+}
+.adres h1{
+    width: 45px;
+    height: 61px;
+    float: left;
+    margin-top: -143px;
+    margin-left: 1040px;
+    font-family: 'Montserrat';
+}
+.adres h2{
+    width: 310px;
+    height: 30px;
+    float: left;
+    margin-top: -95px;
+    margin-left: 1040px;
+    font-family: 'Montserrat';
+}
+.phone img{
+    width: 66px;
+    height: 61.48px;
+    margin-top: -130px;
+    margin-left: 1440px;
+    float: left;
+}
+.phone h1{
+    width: 124px;
+    height: 48px;
+    margin-left: 1510px;
+    float: left;
+    margin-top: -143px;
+    font-family: 'Montserrat';
+}
+.phone h2{
+    width: 210px;
+    height: 48px;
+    margin-left: 1510px;
+    float: left;
+    margin-top: -95px;
+    font-family: 'Montserrat';
+}
+.fon_marvel{
+    width: 1855px;
+    height: 643px;
+
+}
+.fon_marvel img{
+    width: 1855px;
+    height: 643px;
+}
+.text h1{
+    width: 250px;
+    height: 71px;
+    margin-top: -550px;
+    margin-left: 810px;
+    color: white;
+    font-size: 56px;
+    font-family: 'Montserrat';
+}
+.text h2{
+    width: 787px;
+    height: 71px;
+    margin-top: -50px;
+    margin-left: 585px;
+    color: white;
+    font-size: 56px;
+    font-family: 'Montserrat';
+}
+.text p{
+    width: 1840px;
+    height: 100px;
+    margin-left: 15px;
+    color: white;
+    font-weight: bolder;
+    font-size: 19px;
+    font-family: 'Montserrat';
+}
+button{
+    width: 331px;
+    height: 89px;
+    margin-left: 760px;
+    border-radius: 20px;
+    background: #664D5A;
+    color: white;
+    font-size: 26px;
+}
+.content{
+    width: 1855px;
+    height: 650px;
+    margin-top: 4px;
+
+}
+.content h1{
+    font-family: 'Montserrat';
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+.content h2{
+    font-family: 'Montserrat';
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+.footer{
+    width: 1855px;
+    height: 268px;
+    filter: brightness(85%)
+}
+.footer img{
+    width: 1855px;
+    height: 268px;
+}
+.footer_text{
+    width: 630px;
+    height: 64px;
+    margin-top: -160px;
+    margin-left: 840px;
+}
+.footer_text h1{
+    width: 646px;
+    height: 64px;
+    margin-top: 0px;
+    margin-left: -230px;
+    font-family: 'Montserrat';
+    font-size: 55px;
+    font-weight: 800;
+    line-height: 49px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: white;
+}
+.footer_text h2{
+    width: 485px;
+    height: 46px;
+    margin-left: -140px;
+    margin-top: -25px;
+    font-family: 'Montserrat';
+    font-size: 55px;
+    font-weight: 800;
+    line-height: 49px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: white;
+}
