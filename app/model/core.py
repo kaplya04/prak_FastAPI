@@ -1,10 +1,8 @@
 from datetime import datetime
 
-from sqlalchemy import Column, Integer, String, MetaData, ForeignKey, Table, TIMESTAMP, JSON, Boolean
+from sqlalchemy import MetaData, Table, Column, Integer, String, TIMESTAMP, ForeignKey, JSON, Boolean
 
 metadata = MetaData()
-
-
 comic = Table(
     "comic",
     metadata,
@@ -50,8 +48,7 @@ users = Table(
     Column('email', String, nullable=False),
     Column('name', String, nullable=False),
     Column('password', String, nullable=False),
-    Column('registered_at', TIMESTAMP, default=datetime),
-    Column('comic_id', Integer, ForeignKey(comic.c.id)),
+    Column('registered_at', TIMESTAMP, default=datetime.utcnow),
     Column('hashed_password', String, nullable=False),
     Column('is_active', Boolean, default=True, nullable=False),
     Column('is_superuser', Boolean, default=True, nullable=False),
