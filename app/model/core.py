@@ -1,56 +1,45 @@
-from datetime import datetime
-
-from sqlalchemy import MetaData, Table, Column, Integer, String, TIMESTAMP, ForeignKey, JSON, Boolean
+from sqlalchemy import Column, Integer, String, MetaData, Table, ForeignKey
+from sqlalchemy.orm import relationship
+from app.model.database import Base
 
 metadata = MetaData()
-comic = Table(
-    "comic",
+
+comic_publishing = Table(
+    'comic_publishing',
     metadata,
-    Column('id', Integer, primary_key=True),
-    Column('name', String, nullable=False),
-    Column('autor', String, nullable=False),
-    Column('year', String, nullable=False),
-    Column('permissions', JSON),
+    Column('comic_id', ForeignKey("publishing.id"), primary_key=True),
+    Column("publishing_id", ForeignKey("comic.id"), primary_key=True),
 )
 
-publishing = Table(
-    "publishing",
-    metadata,
-    Column('id', Integer, primary_key=True),
-    Column('name', String, nullable=False),
-)
 
-genre = Table(
-    "genre",
-    metadata,
-    Column('id', Integer, primary_key=True),
-    Column('name', String, nullable=False),
-)
+class comic(Base):
+    __tablename__ = "comic"
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String, index=True)
+    after = Column(String, index=True)
+    year = Column(String, index=True)
+    publishing = relationship('publishing', secondary=comic_publishing, back_populates="comic")
 
-series = Table(
-    "serie",
-    metadata,
-    Column('id', Integer, primary_key=True),
-    Column('name', String, nullable=False),
-)
 
-hero = Table(
-    "hero",
-    metadata,
-    Column('id', Integer, primary_key=True),
-    Column('name', String, nullable=False),
-)
+class publishing(Base):
+    __tablename__ = "publishing"
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String, index=True)
 
-users = Table(
-    'user',
-    metadata,
-    Column('id', Integer, primary_key=True),
-    Column('email', String, nullable=False),
-    Column('name', String, nullable=False),
-    Column('password', String, nullable=False),
-    Column('registered_at', TIMESTAMP, default=datetime.utcnow),
-    Column('hashed_password', String, nullable=False),
-    Column('is_active', Boolean, default=True, nullable=False),
-    Column('is_superuser', Boolean, default=True, nullable=False),
-    Column('is_verified', Boolean, default=True, nullable=False),
-)
+
+class genre(Base):
+    __tablename__ = "genre"
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String, index=True)
+
+
+class series(Base):
+    __tablename__ = "series"
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String, index=True)
+
+
+class hero(Base):
+    __tablename__ = "hero"
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String, index=True)
