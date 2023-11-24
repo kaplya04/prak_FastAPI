@@ -19,7 +19,7 @@ class Comics(Base):
     name = Column(Text, index=True)
     autor = Column(Text, index=True)
     year = Column(String, index=True)
-    publishing = relationship('publishings', secondary=comics_publishings, back_populates="comic")
+    publishing = relationship('publishings', secondary="comics_publishings", back_populates="comic")
 
 
 class Publishings(Base):
