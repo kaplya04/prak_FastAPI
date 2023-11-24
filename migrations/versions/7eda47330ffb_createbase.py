@@ -18,6 +18,11 @@ depends_on: Union[str, Sequence[str], None] = None
 
 
 def upgrade() -> None:
+    op.create_table('category',
+                    sa.Column('id', sa.Integer(), nullable=False),
+                    sa.Column('category', sa.String(), nullable=True),
+                    sa.PrimaryKeyConstraint('id')
+                    )
     op.create_table('comics',
                     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
                     sa.Column('name', sa.String(), nullable=False),

@@ -4,12 +4,13 @@ from app.model.database import Base
 
 metadata = MetaData()
 
-Comics_Publishings = Table(
-    'comics_publishings',
-    metadata,
-    Column('comics_id', ForeignKey("publishings.id"), primary_key=True),
-    Column("publishings_id", ForeignKey("comics.id"), primary_key=True),
-)
+
+class Category(Base):
+    __tablename__ = "category"
+
+    id = Column(Integer, primary_key=True, index=True)
+    category = Column(String, index=True)
+    medicine = relationship("Comics", back_populates="categorys")
 
 
 class Comics(Base):
@@ -19,7 +20,8 @@ class Comics(Base):
     name = Column(Text, index=True)
     autor = Column(Text, index=True)
     year = Column(String, index=True)
-    publishing = relationship('publishings', secondary="comics_publishings", back_populates="comic")
+    category_id = Column(Integer, ForeignKey("category.id"))
+    category = relationship("Category", backref="comics")
 
 
 class Publishings(Base):
