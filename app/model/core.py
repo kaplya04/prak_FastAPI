@@ -1,45 +1,50 @@
-from sqlalchemy import Column, Integer, String, MetaData, Table, ForeignKey
+from sqlalchemy import Column, Integer, String, MetaData, Table, ForeignKey, Text
 from sqlalchemy.orm import relationship
 from app.model.database import Base
 
 metadata = MetaData()
 
-comic_publishing = Table(
-    'comic_publishing',
+Comics_Publishings = Table(
+    'comics_publishings',
     metadata,
-    Column('comic_id', ForeignKey("publishing.id"), primary_key=True),
-    Column("publishing_id", ForeignKey("comic.id"), primary_key=True),
+    Column('comics_id', ForeignKey("publishings.id"), primary_key=True),
+    Column("publishings_id", ForeignKey("comics.id"), primary_key=True),
 )
 
 
-class comic(Base):
-    __tablename__ = "comic"
+class Comics(Base):
+    __tablename__ = "comics"
+
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, index=True)
-    after = Column(String, index=True)
+    name = Column(Text, index=True)
+    autor = Column(Text, index=True)
     year = Column(String, index=True)
-    publishing = relationship('publishing', secondary=comic_publishing, back_populates="comic")
+    publishing = relationship('publishings', secondary=comics_publishings, back_populates="comic")
 
 
-class publishing(Base):
-    __tablename__ = "publishing"
+class Publishings(Base):
+    __tablename__ = "publishings"
+
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, index=True)
+    name = Column(Text, index=True)
 
 
-class genre(Base):
-    __tablename__ = "genre"
+class Genres(Base):
+    __tablename__ = "genres"
+
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, index=True)
+    name = Column(Text, index=True)
 
 
-class series(Base):
+class Series(Base):
     __tablename__ = "series"
+
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, index=True)
+    name = Column(Text, index=True)
 
 
-class hero(Base):
-    __tablename__ = "hero"
+class Personajs(Base):
+    __tablename__ = "personajs"
+
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, index=True)
+    name = Column(Text, index=True)
