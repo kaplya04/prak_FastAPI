@@ -1,10 +1,11 @@
-from typing import Union
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 
 from app.model.schemas import ComicsCreate
+from app.router.router import comicsRouter
 
 app = FastAPI()
+app.include_router(comicsRouter)
 
 comics = []
 publishings = []

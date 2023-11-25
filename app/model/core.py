@@ -18,7 +18,7 @@ class Comics(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(Text, index=True)
-    autor = Column(Text, index=True)
+    author = Column(Text, index=True)
     year = Column(String, index=True)
     category_id = Column(Integer, ForeignKey("category.id"))
     category = relationship("Category", backref="comics")
