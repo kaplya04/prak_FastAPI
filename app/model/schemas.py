@@ -4,35 +4,27 @@ from typing import List
 from pydantic import BaseModel
 
 
-class ComicsCreate(BaseModel):
+class ComicsShemas(BaseModel):
     name: str
     after: str
     year: str
 
 
-class PublishingsCreate(BaseModel):
+class PublishingsShemas(BaseModel):
     name: str
 
 
-class GenresCreate(BaseModel):
+class GenresShemas(BaseModel):
     name: str
 
 
-class SeriesCreate(BaseModel):
+class SeriesShemas(BaseModel):
     name: str
 
 
-class PersonajsCreate(BaseModel):
+class PersonajsShemas(BaseModel):
     name: str
 
 
-class Comicsq(BaseModel):
-    id: int
-    name: str
-    after: str
-    year: str
-
-
-class publishingsq(BaseModel):
-    comics: List[Comicsq]
-    publishings_id: int
+class CategoryShemas(BaseModel):
+    categories: str
