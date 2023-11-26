@@ -6,7 +6,7 @@ from pydantic import BaseModel
 
 class ComicsCreate(BaseModel):
     name: str
-    autor: str
+    after: str
     year: str
 
 
@@ -24,3 +24,15 @@ class SeriesCreate(BaseModel):
 
 class PersonajsCreate(BaseModel):
     name: str
+
+
+class Comicsq(BaseModel):
+    id: int
+    name: str
+    after: str
+    year: str
+
+
+class publishingsq(BaseModel):
+    comics: List[Comicsq]
+    publishings_id: int
