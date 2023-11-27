@@ -6,19 +6,12 @@ from pydantic import BaseModel
 
 class ComicsShemas(BaseModel):
     name: str
-    after: str
+    autor: str
     year: str
+    image: str
 
 
 class PublishingsShemas(BaseModel):
-    name: str
-
-
-class GenresShemas(BaseModel):
-    name: str
-
-
-class SeriesShemas(BaseModel):
     name: str
 
 

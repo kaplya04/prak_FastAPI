@@ -28,22 +28,13 @@ def upgrade() -> None:
                     sa.Column('name', sa.String(), nullable=False),
                     sa.Column('autor', sa.String(), nullable=True),
                     sa.Column('year', sa.String(), nullable=True),
+                    sa.Column('image', sa.String(), nullable=False),
                     sa.Column('comics_id', sa.Integer(), nullable=True),
                     )
     op.create_table('publishings',
                     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
                     sa.Column('name', sa.String(), nullable=False),
                     sa.Column('publishings_id', sa.Integer(), nullable=True),
-                    )
-    op.create_table('genres',
-                    sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
-                    sa.Column('name', sa.String(), nullable=False),
-                    sa.Column('genres_id', sa.Integer(), nullable=True),
-                    )
-    op.create_table('series',
-                    sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
-                    sa.Column('name', sa.String(), nullable=False),
-                    sa.Column('series_id', sa.Integer(), nullable=True),
                     )
     op.create_table('personajs',
                     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),

@@ -1,5 +1,4 @@
-from sqlalchemy import Column, Integer, String, MetaData, Table, ForeignKey, Text
-from sqlalchemy.orm import relationship
+from sqlalchemy import Column, Integer, String, MetaData, ForeignKey, Text
 from app.model.database import Base
 
 metadata = MetaData()
@@ -10,7 +9,6 @@ class Category(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     category = Column(String, index=True)
-    comics = relationship("Comics", back_populates="category")
 
 
 class Comics(Base):
@@ -18,28 +16,14 @@ class Comics(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(Text, index=True)
-    after = Column(Text, index=True)
+    autor = Column(Text, index=True)
     year = Column(String, index=True)
-    category_id = Column(Integer, ForeignKey("category.id"))
-    category = relationship("Category", backref="comics")
+    image = Column(String, index=True)
+    comics_id = Column(Integer, ForeignKey("category.id"))
 
 
 class Publishings(Base):
     __tablename__ = "publishings"
-
-    id = Column(Integer, primary_key=True, index=True)
-    name = Column(Text, index=True)
-
-
-class Genres(Base):
-    __tablename__ = "genres"
-
-    id = Column(Integer, primary_key=True, index=True)
-    name = Column(Text, index=True)
-
-
-class Series(Base):
-    __tablename__ = "series"
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(Text, index=True)
